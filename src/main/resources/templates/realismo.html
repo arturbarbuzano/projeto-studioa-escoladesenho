@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xlmns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso Realismo</title>
+
+    <script th:src="@{/js/script.js}"></script>
+    <link th:href="@{/css/index.css}" rel="stylesheet"/>
+    
+</head>
+<body>
+
+    <header>
+
+        <img th:src="@{/img/logo.png}"alt="Logo Studio A"/>
+        
+        <nav>
+            <a th:href="@{/}">Início</a>
+            <a th:href="@{/cartoon}">Cartoon</a>
+            <a th:href="@{/manga}">Mangá</a>
+            <a th:href="@{/realismo}">Realismo</a>
+        </nav>
+        
+    </header>
+
+    <main>
+
+        <section>
+            <h1>Curso Realismo</h1> 
+        </section>
+        
+        <article>
+                <p>O Curso de Realismo do Studio A é ideal para artistas que desejam dominar a arte de representar o mundo com precisão e detalhes impressionantes.
+                   Durante o curso, o aluno aprende técnicas avançadas de observação, sombreamento, perspectiva e texturização, desenvolvendo habilidades para criar obras realistas que capturam a essência dos objetos e cenas.
+                   Com foco em prática intensiva e estudos detalhados, o curso é adequado para desenhistas intermediários e avançados que buscam elevar seu nível artístico.
+                   A duração do curso é de aproximadamente 10 meses, com aulas semanais e feedback personalizado para cada aluno.
+                   Aprenda a transformar sua visão em arte realista e impressione com suas criações!
+                </p>
+        </article>
+
+        <section>
+            <h2>Desenhos dos nossos Alunos</h2> 
+        </section>
+
+        <figure>
+
+            <div class="curso">
+                <img th:src="@{/img/mangadesenhoUm.png}" alt="Desenho Realista 1" width="300" height="375"/>  
+            </div>
+
+            <div class="curso">
+                <img th:src="@{/img/mangadesenhoDois.jpg}" alt="Desenho Realista 2" width="300" height="375"/>
+            </div>
+
+            <div class="curso">
+                <img th:src="@{/img/mangadesenhoTres.jpg}" alt="Desenho Realista 3" width="300" height="375"/>
+            </div>
+
+            <br>
+
+            <div class="curso">
+                <img th:src="@{/img/mangadesenhoQuatro.jpg}" alt="Desenho Realista 4" width="400"/>
+            </div>
+
+            <div class="curso">
+                <img th:src="@{/img/mangadesenhoCinco.jpg}" alt="Desenho Realista 5" width="400"/>
+            </div>
+
+        </figure>
+
+    </main>
+
+    <footer>
+
+        <p><strong>contato@studioaacademia.com.br</strong></p>
+        <p><strong>&copy; 2024 Studio A - Academia de Desenho. Todos os direitos reservados.</strong></p>
+    </footer>
+
+</body>
+</html>
+

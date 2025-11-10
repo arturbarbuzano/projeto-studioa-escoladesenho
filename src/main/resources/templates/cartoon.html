@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xlmns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso Cartoon</title>
+
+    <script th:src="@{/js/script.js}"></script>
+    <link th:href="@{/css/index.css}" rel="stylesheet"/>
+
+</head>
+<body>
+
+    <header>
+
+        <img th:src="@{/img/logo.png}"alt="Logo Studio A"/>
+        
+        <nav>
+            <a th:href="@{/}">Início</a>
+            <a th:href="@{/cartoon}">Cartoon</a>
+            <a th:href="@{/manga}">Mangá</a>
+            <a th:href="@{/realismo}">Realismo</a>
+        </nav>
+        
+    </header>
+
+    <main>
+
+        <section>
+            <h1>Curso Cartoon</h1> 
+        </section>
+        
+        <article>
+                <p>O curso de Cartoon do Studio A ensina você a criar personagens cheios de vida, expressão e personalidade.
+                   Durante as aulas, o aluno aprende fundamentos de proporção, exagero, expressão facial e linguagem corporal, desenvolvendo a capacidade de transmitir emoções e contar histórias através do desenho.
+                   Com técnicas acessíveis e práticas dinâmicas, o curso é ideal tanto para iniciantes quanto para quem já desenha e quer aprimorar o estilo e dominar o traço caricatural.
+                   O curso tem duração média de 6 meses, com aulas semanais e acompanhamento individual, garantindo evolução constante e resultados visíveis em pouco tempo.
+                   Dê asas à sua imaginação e descubra como transformar ideias simples em personagens marcantes!
+                </p>
+        </article>
+
+        <section>
+            <h2>Desenhos dos nossos Alunos</h2> 
+        </section>
+
+        <figure>
+
+            <div class="curso">
+                <img th:src="@{/img/cartoondesenhoUm.jpg}" alt="Desenho Cartoon 1" width="300" height="375"/>  
+            </div>
+
+            <div class="curso">
+                <img th:src="@{/img/cartoondesenhoDois.png}" alt="Desenho Cartoon 2" width="300" height="375"/>
+            </div>
+
+            <div class="curso">
+                <img th:src="@{/img/cartoondesenhoTres.jpg}" alt="Desenho Cartoon 3" width="300" height="375"/>
+            </div>
+
+            <br>
+
+            <div class="curso">
+                <img th:src="@{/img/cartoondesenhoQuatro.png}" alt="Desenho Cartoon 4" width="400"/>
+            </div>
+
+            <div class="curso">
+                <img th:src="@{/img/cartoondesenhoCinco.png}" alt="Desenho Cartoon 5" width="400" height="400"/>
+            </div>
+
+        </figure>
+
+    </main>
+
+    <footer>
+
+        <p><strong>contato@studioaacademia.com.br</strong></p>
+        <p><strong>&copy; 2024 Studio A - Academia de Desenho. Todos os direitos reservados.</strong></p>
+    </footer>
+
+</body>
+</html>
+

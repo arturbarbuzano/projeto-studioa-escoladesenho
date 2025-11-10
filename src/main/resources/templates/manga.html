@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xlmns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso Mangá</title>
+
+    <script th:src="@{/js/script.js}"></script>
+    <link th:href="@{/css/index.css}" rel="stylesheet"/>
+    
+</head>
+<body>
+
+    <header>
+
+        <img th:src="@{/img/logo.png}"alt="Logo Studio A"/>
+        
+        <nav>
+            <a th:href="@{/}">Início</a>
+            <a th:href="@{/cartoon}">Cartoon</a>
+            <a th:href="@{/manga}">Mangá</a>
+            <a th:href="@{/realismo}">Realismo</a>
+        </nav>
+        
+    </header>
+
+    <main>
+
+        <section>
+            <h1>Curso Mangá</h1> 
+        </section>
+        
+        <article>
+                <p>O Curso de Mangá do Studio A é voltado para quem deseja mergulhar no estilo japonês e criar histórias cheias de emoção e impacto visual.
+                   O aluno aprende desde os fundamentos do traço e anatomia estilizada até a criação de personagens, expressões, poses e narrativa visual, explorando a linguagem própria do mangá.
+                   As aulas unem técnica e criatividade, permitindo que cada aluno desenvolva um estilo único e autêntico inspirado nos grandes mestres japoneses.
+                   O curso tem duração aproximada de 8 meses, com aulas semanais e orientação personalizada para cada etapa do aprendizado.
+                   Transforme sua paixão por mangá em arte e dê vida aos seus próprios personagens!
+                </p>
+        </article>
+
+        <section>
+            <h2>Desenhos dos nossos Alunos</h2> 
+        </section>
+
+        <figure>
+
+            <div class="curso">
+                <img th:src="@{/img/mangadesenhoUm.png}" alt="Desenho Mangá 1" width="300" height="375"/>  
+            </div>
+
+            <div class="curso">
+                <img th:src="@{/img/mangadesenhoDois.jpg}" alt="Desenho Mangá 2" width="300" height="375"/>
+            </div>
+
+            <div class="curso">
+                <img th:src="@{/img/mangadesenhoTres.jpg}" alt="Desenho Mangá 3" width="300" height="375"/>
+            </div>
+
+            <br>
+
+            <div class="curso">
+                <img th:src="@{/img/mangadesenhoQuatro.jpg}" alt="Desenho Mangá 4" width="400"/>
+            </div>
+
+            <div class="curso">
+                <img th:src="@{/img/mangadesenhoCinco.jpg}" alt="Desenho Mangá 5" width="400"/>
+            </div>
+
+        </figure>
+
+    </main>
+
+    <footer>
+
+        <p><strong>contato@studioaacademia.com.br</strong></p>
+        <p><strong>&copy; 2024 Studio A - Academia de Desenho. Todos os direitos reservados.</strong></p>
+    </footer>
+
+</body>
+</html>
+

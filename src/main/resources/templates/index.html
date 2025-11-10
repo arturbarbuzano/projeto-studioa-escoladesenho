@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xlmns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio A - Academia de Desenho</title>
+
+    <script th:src="@{/js/script.js}"></script>
+    <link th:href="@{/css/index.css}" rel="stylesheet"/>
+</head>
+<body>
+
+    <header>
+
+        <img th:src="@{/img/logo.png}"alt="Logo Studio A"/>
+        
+        <nav>
+            <a th:href="@{/}">Início</a>
+            <a th:href="@{/cartoon}">Cartoon</a>
+            <a th:href="@{/manga}">Mangá</a>
+            <a th:href="@{/realismo}">Realismo</a>
+        </nav>
+        
+    </header>
+
+    <main>
+
+        <section>
+            <h1>Seja Bem-vindo(a) ao Studio A!</h1> 
+        </section>
+        
+        <article>
+                <p>O Studio A é uma academia de desenho online dedicada a ensinar técnicas de arte em 
+                    diversos estilos, incluindo Cartoon, Mangá e Realismo. Nossos cursos são 
+                    projetados para ajudar artistas de todos os níveis a aprimorar suas 
+                    habilidades e expressar sua criatividade. Confira abaixo os cursos do Studio A 
+                    e comece sua jornada artística hoje mesmo!
+                </p>
+        </article>
+
+        <section>
+            <h2>Nossos Cursos</h2> 
+        </section>
+
+        <figure>
+
+            <div class="curso">
+                <img th:src="@{/img/cartoon.jpg}" alt="Cartoon" width="300" height="375"/>
+                <figcaption><a th:href="@{/cartoon}">Cartoon</a></figcaption>
+            </div>
+
+            <div class="curso">
+                <img th:src="@{/img/manga.png}" alt="Mangá" width="300"/>
+                <figcaption><a th:href="@{/manga}">Mangá</a></figcaption>
+            </div>
+
+            <div class="curso">
+                <img th:src="@{/img/realismo.jpg}" alt="Realismo" width="300" height="375"/>
+                <figcaption><a th:href="@{/realismo}">Realismo</a></figcaption>
+            </div>
+
+        </figure>
+
+    </main>
+
+    <footer>
+
+        <p><strong>contato@studioaacademia.com.br</strong></p>
+        <p><strong>&copy; 2024 Studio A - Academia de Desenho. Todos os direitos reservados.</strong></p>
+    </footer>
+
+</body>
+</html>
+
