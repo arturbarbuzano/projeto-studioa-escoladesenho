@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xlmns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio A - Academia de Desenho</title>
+
+    <script th:src="@{/js/script.js}"></script>
+    <link th:href="@{/css/index.css}" rel="stylesheet"/>
+</head>
+<body>
+
+    <header>
+
+        <img th:src="@{/img/logo.png}"alt="Logo Studio A"/>
+        
+        <nav>
+            <a th:href="@{/}">Início</a>
+            <a th:href="@{/cartoon}">Cartoon</a>
+            <a th:href="@{/manga}">Mangá</a>
+            <a th:href="@{/realismo}">Realismo</a>
+            <a th:href="@{/inscricao}">Inscrição</a>
+        </nav>
+        
+    </header>
+
+    <main>
+
+        <section>
+            <h1>Inscreva-se</h1> 
+        </section>
+  
+        <article>
+            <form th:action="@{/inscricao}" method="get">
+
+                <label>Nome:</label> <br> <input type="text" name="name"> <br>
+                <label>Email:</label> <br><input type="email" name="email"> <br>
+                <label>Técnica</label> <br> <input type="text" name="assunto"> <br>
+                <br><button type="submit">Enviar</button>
+            </form>
+        </article>
+    </main>
+
+    <footer>
+
+        <p><strong>contato@studioaacademia.com.br</strong></p>
+        <p><strong>&copy; 2024 Studio A - Academia de Desenho. Todos os direitos reservados.</strong></p>
+    </footer>
+
+</body>
+</html>

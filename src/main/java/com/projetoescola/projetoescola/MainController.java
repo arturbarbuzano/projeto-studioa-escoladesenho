@@ -26,4 +26,8 @@ public class MainController {
     public String realismo() {
         return "realismo";
     }
+    @GetMapping("/inscricao")
+    public String inscricao() {
+        return "inscricao";
+    }
 }
