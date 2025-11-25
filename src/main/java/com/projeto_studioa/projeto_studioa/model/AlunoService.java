@@ -12,12 +12,31 @@ public class AlunoService {
     @Autowired
     AlunoDAO alunoDAO;
 
-    public void inserirAluno(Aluno aluno) {
-        alunoDAO.inserirAluno(aluno);
+    public void inserirAluno(Aluno aluno) 
+    {
+        try {
+            alunoDAO.inserirAluno(aluno);
+        } catch (RuntimeException e) {
+            if (e.getMessage().equals("CPF_DUPLICADO")) {
+            throw new RuntimeException("Este CPF já está inscrito!");
+        }
+        throw e;
+        }
+    }
+
+    public void atualizarAluno(int id, Aluno aluno)
+    {
+        alunoDAO.atualizarAluno(id, aluno);
     }
 
     public ArrayList<Aluno> listarAlunos()
     {
         return alunoDAO.listar();
     }
+
+    public Aluno obterAluno(int id)
+    {
+        return alunoDAO.obterAluno(id);
+    }
+
 }

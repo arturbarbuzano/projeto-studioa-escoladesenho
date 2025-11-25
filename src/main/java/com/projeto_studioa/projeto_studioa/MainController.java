@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.projeto_studioa.projeto_studioa.model.Aluno;
@@ -54,10 +55,16 @@ public class MainController {
 
     @PostMapping("/inscricao")
     public String aluno(Model model, @ModelAttribute Aluno aluno){
-        AlunoService alunoService = context.getBean(AlunoService.class);
+    AlunoService alunoService = context.getBean(AlunoService.class);
+    try {
         alunoService.inserirAluno(aluno);
-        return "sucesso";
-
+    } catch (RuntimeException e) {
+        if (e.getMessage().contains("CPF")) {
+            model.addAttribute("erro", "Este aluno já está inscrito e não pode se inscrever em mais de uma técnica!");
+            return "inscricao"; 
+        }
+    }
+    return "sucesso";
     }
 
     @GetMapping("/listar")
@@ -68,4 +75,23 @@ public class MainController {
         return "listarAluno";
 
     }
+
+    @GetMapping("/upd/inscricao/{id}")
+    public String alunoUpd(Model model, @PathVariable int id){
+        AlunoService alunoService = context.getBean(AlunoService.class);
+        Aluno aluno = alunoService.obterAluno(id);
+        model.addAttribute("aluno", aluno);
+        model.addAttribute("id", id);
+        return "mudarInscricao";
+        
+    }
+
+    @PostMapping("/upd/inscricao/{id}")
+    public String alunoUpd(Model model, @ModelAttribute Aluno aluno, @PathVariable int id){
+        AlunoService alunoService = context.getBean(AlunoService.class);
+        alunoService.atualizarAluno(id,aluno);
+        return "redirect:/listar";
+        
+    }
+
 }

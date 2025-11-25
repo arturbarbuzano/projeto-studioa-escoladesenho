@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studio A - Inscrição</title>
+    <title>Studio A - Mudar Inscrição</title>
 
     <script th:src="@{/js/script.js}"></script>
     <link th:href="@{/css/index.css}" rel="stylesheet"/>
@@ -34,7 +34,7 @@
             <div th:if="${erro}" style="color:red; font-weight: bold;">
                 <p th:text="${erro}"></p>
             </div>
-            <form th:action="@{/inscricao}" method="post" th:object="${aluno}">
+            <form th:action="@{'/upd/inscricao/' + ${id}}" method="post" th:object="${aluno}">
 
                 <label>Nome:</label> <br> <input type="text" th:field="*{nome}" required> <br>
                 <label>CPF:</label> <br> <input type="text" th:field="*{cpf}" required> <br>
