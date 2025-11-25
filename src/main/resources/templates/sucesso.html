@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studio A - Inscrição</title>
+    <title>Studio A - Academia de Desenho</title>
 
     <script th:src="@{/js/script.js}"></script>
     <link th:href="@{/css/index.css}" rel="stylesheet"/>
+    
 </head>
 <body>
 
@@ -27,24 +28,11 @@
     <main>
 
         <section>
-            <h1>Inscreva-se</h1> 
+            <h1>Inscrição Realizada com Sucesso!</h1> 
         </section>
-  
-        <article>
-            <form th:action="@{/inscricao}" method="post" th:object="${aluno}">
+        
 
-                <label>Nome:</label> <br> <input type="text" th:field="*{nome}" required> <br>
-                <label>CPF:</label> <br> <input type="text" th:field="*{cpf}" required> <br>
-                <label>Técnica:</label> <br> 
-                    <select th:field="*{tecnica}" required>
-                        <option value="" disabled selected>-- Selecione uma técnica --</option>
-                        <option value="Realismo">Realismo</option>
-                        <option value="Manga">Mangá</option>
-                        <option value="Cartoon">Cartoon</option>
-                    </select> <br>
-                    <input type="submit" value="Inscrever-se">
-            </form>
-        </article>
+
     </main>
 
     <footer>
@@ -55,3 +43,4 @@
 
 </body>
 </html>
+

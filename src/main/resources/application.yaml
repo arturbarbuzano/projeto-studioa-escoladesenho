@@ -1,0 +1,20 @@
+server: 
+  port: 8080
+
+spring: 
+  datasource: 
+    url: jdbc:postgresql://localhost:5432/banco_studioa
+    username: postgres
+    password: 123456
+    driver-class-name: org.postgresql.Driver
+    initialize: true
+
+  sql: 
+    init:
+      mode: always 
+      schema-locations: classpath:/schema-postgresql.sql
+      platform: postgres
+
+
+
+  
