@@ -43,4 +43,8 @@ public class AlunoService {
         return alunoDAO.obterAluno(id);
     }
 
+    public void deletar(int id)
+    {
+       alunoDAO.deletar(id);
+    }
 }

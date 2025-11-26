@@ -20,7 +20,7 @@ public class MainController {
 
     @Autowired
     private ApplicationContext context;
-    
+
     @Autowired
     private AlunoService alunoService;
 
@@ -107,6 +107,14 @@ public class MainController {
             }
         }
 
+        return "redirect:/listar";
+    }
+
+    @PostMapping("/del/inscricao/{id}")
+    public String deletar(@PathVariable int id)
+    {
+        AlunoService alunoService = context.getBean(AlunoService.class);
+        alunoService.deletar(id);
         return "redirect:/listar";
     }
 

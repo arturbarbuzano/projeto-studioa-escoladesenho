@@ -38,7 +38,8 @@
                     <th>Nome</th>
                     <th>CPF</th>
                     <th>Técnica</th>
-                    <th>       </th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -48,6 +49,9 @@
                     <td th:text="${aluno.cpf}"></td>
                     <td th:text="${aluno.tecnica}"></td>
                     <td><a th:href="@{'/upd/inscricao/' + ${aluno.id}}">Editar</a></td>
+                    <td><form th:action="@{'/del/inscricao/' + ${aluno.id}}" method="post">
+                        <input type="submit" value="Deletar">
+                    </form></td>
                 </tr>
 
             </tbody>

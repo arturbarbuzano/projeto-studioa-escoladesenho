@@ -73,4 +73,9 @@ public class AlunoDAO {
         int qtde = jdbc.queryForObject(sql, Integer.class, cpf, idAtual);
         return qtde > 0;
     }
+
+    public void deletar(int id){
+        String sql ="DELETE FROM Aluno WHERE id=?";
+        jdbc.update(sql,id);
+    }
 }
