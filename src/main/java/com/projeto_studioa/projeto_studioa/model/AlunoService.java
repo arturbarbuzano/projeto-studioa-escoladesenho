@@ -24,8 +24,12 @@ public class AlunoService {
         }
     }
 
-    public void atualizarAluno(int id, Aluno aluno)
-    {
+    public void atualizarAluno(int id, Aluno aluno) {
+        
+        if (alunoDAO.cpfExisteParaOutroAluno(aluno.getCpf(), id)) {
+            throw new RuntimeException("CPF_DUPLICADO");
+        }
+
         alunoDAO.atualizarAluno(id, aluno);
     }
 

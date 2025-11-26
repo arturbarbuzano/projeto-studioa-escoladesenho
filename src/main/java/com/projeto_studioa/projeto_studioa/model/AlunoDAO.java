@@ -58,12 +58,19 @@ public class AlunoDAO {
     }
 
     public void atualizarAluno(int id, Aluno aluno) {
-    try {
-        String sql = "UPDATE Aluno SET nome = ?, cpf = ?, tecnica = ? WHERE id = ?";
-        Object[] obj = { aluno.getNome(), aluno.getCpf(), aluno.getTecnica(), id };
-        jdbc.update(sql, obj);
-    } catch (Exception e) {
-        throw new RuntimeException("CPF_DUPLICADO");
+        try {
+            String sql = "UPDATE Aluno SET nome = ?, cpf = ?, tecnica = ? WHERE id = ?";
+            Object[] obj = { aluno.getNome(), aluno.getCpf(), aluno.getTecnica(), id };
+            jdbc.update(sql, obj);
+            } catch (Exception e) {
+                throw new RuntimeException("CPF_DUPLICADO");
+            }
     }
+
+    public boolean cpfExisteParaOutroAluno(String cpf, int idAtual) 
+    {
+        String sql = "SELECT COUNT(*) FROM Aluno WHERE cpf = ? AND id <> ?";
+        int qtde = jdbc.queryForObject(sql, Integer.class, cpf, idAtual);
+        return qtde > 0;
     }
 }

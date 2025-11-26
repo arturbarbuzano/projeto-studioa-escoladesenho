@@ -20,6 +20,9 @@ public class MainController {
 
     @Autowired
     private ApplicationContext context;
+    
+    @Autowired
+    private AlunoService alunoService;
 
     @GetMapping("/")
     public String index() {
@@ -87,11 +90,24 @@ public class MainController {
     }
 
     @PostMapping("/upd/inscricao/{id}")
-    public String alunoUpd(Model model, @ModelAttribute Aluno aluno, @PathVariable int id){
-        AlunoService alunoService = context.getBean(AlunoService.class);
-        alunoService.atualizarAluno(id,aluno);
+    public String alunoUpd(
+            Model model,
+            @ModelAttribute Aluno aluno,
+            @PathVariable int id) {
+
+        try {
+            alunoService.atualizarAluno(id, aluno);
+        } catch (RuntimeException e) {
+
+            if ("CPF_DUPLICADO".equals(e.getMessage())) {
+                model.addAttribute("erro", "Este CPF já está cadastrado por outro aluno!");
+                model.addAttribute("aluno", aluno);
+                model.addAttribute("id", id);
+                return "mudarInscricao";
+            }
+        }
+
         return "redirect:/listar";
-        
     }
 
 }
