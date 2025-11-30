@@ -44,11 +44,6 @@ public class MainController {
         return "realismo";
     }
 
-    @GetMapping("/arearestrita")
-    public String arearestrita() {
-        return "arearestrita";
-    }
-
     @GetMapping("/inscricao")
     public String aluno(Model model){
         model.addAttribute("aluno", new Aluno());
