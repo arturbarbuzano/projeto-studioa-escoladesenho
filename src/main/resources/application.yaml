@@ -3,9 +3,9 @@ server:
 
 spring:
   datasource:
-    url: ${DATABASE_URL}
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
+    url: jdbc:postgresql://dpg-d4loko8gjchc73arjllg-a.oregon-postgres.render.com:5432/projeto_banco_studioa
+    username: admin
+    password: ZdLclBl6zIrvftzhY4oM29CW0oJ1kE2d
     driver-class-name: org.postgresql.Driver
 
   sql:
